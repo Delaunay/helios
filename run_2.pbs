@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source /home/delaunay/base/bin/activate
+
+cd "${PBS_O_WORKDIR}"
+
+python mnist.py
