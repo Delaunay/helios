@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# set the working directory to where the job is launched                                                                                                                                                                                                                                                                                                                                                                                                                                               cd "${PBS_O_WORKDIR}"
+
+# Run you script inside a singularity image
+IMAGE=/rap/jvb-000-aa/singularityimages/pytorch.simg
+
+FOLDERS=$RAP,$HOME,$SCRATCH
+
+SINGULARITY_EXEC=singularity exec --nv --bind $FOLDERS $IMAGE
+
+# start your python script                                                                                                                                                                                                                                                                                                                                                                                                                                  $SINGULARITY_EXEC python mnist.py
