@@ -1,4 +1,7 @@
 #!/bin/bash
+#PBS -N skynet_1
+#PBS -A jvb-000-ag
+#PBS -l nodes=1:gpus=1,walltime=00:01:00
 
 source /home/delaunay/base/bin/activate
 
