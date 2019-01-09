@@ -1,0 +1,8 @@
+#!/bin/bash
+#PBS -A colosse-users
+#PBS -l advres=MILA2019
+#PBS -l feature=k80
+#PBS -l nodes=1:gpus=1
+#PBS -l walltime=00:01:00
+
+echo "hello world"

@@ -1,11 +1,17 @@
+RAP=/rap/jvb-000-aa/COURS2019/etudiants/$USER
+mkdir -p $RAP
+
 module --force purge
 
 # make singularity 3 available
 PATH=$PATH:/opt/software/singularity-3.0/bin/
 
 # make a shortcut to create an interactive session
-alias mdebug="msub -N skynet_1 -A jvb-000-ag -l nodes=1:gpus=1,walltime=01:00:00 -I -qtest"
-export SINGULARITY_ARGS="--nv --bind $RAP,$HOME,$SCRATCH /rap/jvb-000-aa/singularityimages/pytorch.simg"
+alias mdebug="msub -N debug -A colosse-users -l advres=MILA2019,feature=k80,nodes=1:gpus=1,walltime=15:00 -I -qtest"
+
+alias fast_msub="msub -A colosse-users -l advres=MILA2019,feature=k80,nodes=1:gpus=1"
+
+export SINGULARITY_ARGS="--nv --bind $RAP,$HOME /rap/jvb-000-aa/singularityimages/pytorch.simg"
 
 alias s_shell="singularity shell $SINGULARITY_ARGS"
 alias s_exec="singularity exec $SINGULARITY_ARGS" 
