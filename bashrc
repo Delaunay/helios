@@ -11,7 +11,7 @@ alias mdebug="msub -N debug -A colosse-users -l advres=MILA2019,feature=k80,node
 
 alias fast_msub="msub -A colosse-users -l advres=MILA2019,feature=k80,nodes=1:gpus=1"
 
-export SINGULARITY_ARGS="--nv --bind $RAP,$HOME /rap/jvb-000-aa/singularityimages/pytorch.simg"
+export SINGULARITY_ARGS="--nv --bind $RAP,$HOME /rap/jvb-000-aa/COURS2019/etudiants/ift6759.simg"
 
 alias s_shell="singularity shell $SINGULARITY_ARGS"
 alias s_exec="singularity exec $SINGULARITY_ARGS" 

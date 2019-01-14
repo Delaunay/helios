@@ -12,7 +12,7 @@ PATH=$PATH:/opt/software/singularity-3.0/bin/
 cd "${PBS_O_WORKDIR}"
 
 # Singularity options
-IMAGE=/rap/jvb-000-aa/singularityimages/pytorch.simg
+IMAGE=/rap/jvb-000-aa/COURS2019/etudiants/ift6759.simg
 
 RAP=/rap/jvb-000-aa/COURS2019/etudiants/$USER
 mkdir -p $RAP
@@ -22,3 +22,4 @@ SINGULARITY_EXEC="singularity exec --nv --bind $FOLDERS $IMAGE"
 
 # start your python script
 $SINGULARITY_EXEC python mnist.py
+
